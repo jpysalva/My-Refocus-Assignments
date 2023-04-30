@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+    
+}
+
+.whole-resume {
+    display: block;
+    grid-template-columns: 20% 80%;
+    margin-bottom: 50px;
+}
+
+.leftside {
+    grid-column: 1/2;
+}
+
+.rightside {
+    grid-column: 2/3;
+}
+
+.profilepic {
+    height: 150px;
+    width: 150px;
+    border: 3px solid black;
+    border-radius: 100%;
+    margin-left: 5px;
+}
+
+.workexp {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 400px 400px;
+}
+
+.work1 {
+    
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.work1add {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.work2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.work2add {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.educ-container {
+    height: 150px;
+    display: grid;
+    grid-template-rows: 70px 70px;
+    grid-template-columns: 250px 250px;
+}
+
+.schoolyr1 {
+    
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.school1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.schoolyr2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.school2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+table {
+    border-collapse: collapse;
+    width: 75%;
+    text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+    .whole-resume {
+        display: grid;
+    }
+    .profilepic {
+        max-height: 150px;
+        max-width: 150px;
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccination Information Tracking Form</title>
+</head>
+<body>
+  <form name="vaccineform">
+    <label for="first_name">First Name</label>
+    <input type="text" id="first_name" name="first_name" required>
+    <br>
+  
+    <label for="middle_name">Middle Name</label>
+    <input type="text" id="middle_name" name="middle_name" required>
+    <br>
+  
+    <label for="last_name">Last Name</label>
+    <input type="text" id="last_name" name="last_name" required>
+    <br>
+  
+    <label for="birthday">Birthday</label>
+    <input type="date" id="birthday" name="birthday" required>
+    <br>
+  
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+  
+    <label for="region">Region</label>
+    <select id="region" name="region" required>
+      <option value="">Select a region</option>
+      <option value="Ilocos Region">Region I Ilocos Region</option>
+      <option value="Cagayan Valley">Region II Cagayan Valley</option>
+      <option value="Central Luzon">Region III Central Luzon</option>
+      <option value="CALABARZON">Region IV-A CALABARZON</option>
+      <option value="MIMAROPA">MIMAROPA Region</option>
+      <option value="Bicol Region">Region V Bicol Region</option>
+      <option value="Western Visayas">Region VI Western Visayas</option>
+      <option value="Central Visayas">Region VII Central Visayas</option>
+      <option value="Eastern Visayas">Region VIII Eastern Visayas</option>
+      <option value="Zamboanga Peninsula">Region IX Zamboanga Peninsula</option>
+      <option value="Northern Mindanao">Region X Northern Mindanao</option>
+      <option value="Davao Region">Region XI Davao Region</option>
+      <option value="SOCCSKSARGEN">Region XII SOCCSKSARGEN</option>
+      <option value="Caraga">Region XIII Caraga</option>
+      <option value="National Capital Region">NCR National Capital Region</option>
+      <option value="Cordillera Administrative Region">CAR Cordillera Administrative Region</option>
+      <option value="Bangsamoro Autonomous Region in Muslim Mindanao">BARMM Bangsamoro Autonomous Region in Muslim Mindanao</option>
+    </select>
+    <br>
+  
+    <label for="province">Province</label>
+    <input type="text" id="province" name="province" required>
+    <br>
+  
+    <label for="barangay">Barangay</label>
+    <input type="text" id="barangay" name="barangay" required>
+    <br>
+  
+    <label for="street">Street</label>
+    <input type="text" id="street" name="street" required>
+    <br>
+  
+    <label for="gender">Gender</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other" required>
+    <label for="other">Other</label>
+    <br>
+
+    <label for="vaccine_brand_1">Vaccination Brand (Dose 1)</label>
+    <select id="vaccine_brand_1" name="vaccine_brand_1">
+      <option value="Pfizer BioNTech">Pfizer BioNTech</option>
+      <option value="AstraZeneca">AstraZeneca</option>
+      <option value="Coronavac">Coronavac</option>
+      <option value="Sputnik V">Sputnik V</option>
+      <option value="Janssen">Janssen</option>
+      <option value="Covaxin">Covaxin</option>
+      <option value="Moderna">Moderna</option>
+      <option value="Sinopharm">Sinopharm</option>
+      <option value="Covovax">Covovax</option>
+    </select>
+    <br>
+
+    <label for="vaccine_date_1">Date of Vaccination (Dose 1)</label>
+    <input type="date" id="vaccine_date_1" name="vaccine_date_1">
+    <br>
+
+    <label for="vaccine_site_1">Vaccination (Dose 1) Site</label>
+    <input type="text" id="vaccine_site_1" name="vaccine_site_1">
+    <br>
+
+    <label for="second_vaccination">Did you already get your second vaccination?</label>
+    <input type="radio" id="second_vaccination_yes" name="second_vaccination" value="Yes">
+    <label for="second_vaccination_yes">Yes</label>
+    <input type="radio" id="second_vaccination_no" name="second_vaccination" value="No">
+    <label for="second_vaccination_no">No</label>
+    
+    <div id="second_vaccination_fields" style="display: none;">
+      <label for="vaccine_brand_2">Vaccination Brand (Dose 2)</label>
+      <select id="vaccine_brand_2" name="vaccine_brand_2">
+        <option value="Pfizer BioNTech">Pfizer BioNTech</option>
+        <option value="AstraZeneca">AstraZeneca</option>
+        <option value="Coronavac">Coronavac</option>
+        <option value="Sputnik V">Sputnik V</option>
+        <option value="Janssen">Janssen</option>
+        <option value="Covaxin">Covaxin</option>
+        <option value="Moderna">Moderna</option>
+        <option value="Sinopharm">Sinopharm</option>
+        <option value="Covovax">Covovax</option>
+      </select>
+      <br>
+    
+      <label for="vaccine_date_2">Date of Vaccination (Dose 2)</label>
+      <input type="date" id="vaccine_date_2" name="vaccine_date_2">
+      <br>
+
+      <label for="vaccine_site_2">Vaccination (Dose 2) Site</label>
+      <input type="text" id="vaccine_site_2" name="vaccine_site_2">
+    </div>
+    
+    <input type="submit" value="Submit">
+</form>
+
+    <script>
+      const secondVaccinationFields = document.getElementById("second_vaccination_fields");
+      const yesRadioButton = document.getElementById("second_vaccination_yes");
+      const noRadioButton = document.getElementById("second_vaccination_no");
+
+      yesRadioButton.addEventListener("click", () => {
+        secondVaccinationFields.style.display = "block";
+        document.getElementById("vaccine_brand_2").disabled = false;
+        document.getElementById("vaccine_date_2").disabled = false;
+        document.getElementById("vaccine_site_2").disabled = false;
+      });
+
+      noRadioButton.addEventListener("click", () => {
+        secondVaccinationFields.style.display = "none";
+        document.getElementById("vaccine_brand_2").disabled = true;
+        document.getElementById("vaccine_date_2").disabled = true;
+        document.getElementById("vaccine_site_2").disabled = true;
+      });
+
+
+      const form = document.forms.vaccineform;
+
+      form.addEventListener('submit', function(event){
+        event.preventDefault();
+        const firstName = document.getElementById("first_name").value;
+        const middleName = document.getElementById("middle_name").value;
+        const lastName = document.getElementById("last_name").value;
+        const birthday = document.getElementById("birthday").value;
+        const email = document.getElementById("email").value;
+        const region = document.getElementById("region").value;
+        const province = document.getElementById("province").value;
+        const barangay = document.getElementById("barangay").value;
+        const street = document.getElementById("street").value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const vaccineBrand1 = document.getElementById("vaccine_brand_1").value;
+        const vaccinationDate1 = document.getElementById("vaccine_date_1").value;
+        const vaccinationSite1 = document.getElementById("vaccine_site_1").value;
+        const secondVaccination = document.querySelector('input[name="second_vaccination"]:checked').value;
+
+        let message = "First Name: " + firstName + "\n" +
+                      "Middle Name: " + middleName + "\n"+
+                      "Last Name: " + lastName + "\n" +
+                      "Birthday: " + birthday + "\n" +
+                      "Email: " + email + "\n" +
+                      "Region: " + region + "\n" +
+                      "Province: " + province + "\n" +
+                      "Barangay: " + barangay + "\n" +
+                      "Street: " + street + "\n" +
+                      "Gender: " + gender + "\n" +
+                      "Vaccine Brand (Dose 1): " + vaccineBrand1 + "\n" +
+                      "Date of Vaccination (Dose 1): " + vaccinationDate1 + "\n" +
+                      "Vaccination (Dose 1) Site: " + vaccinationSite1 + "\n";
+
+        if (secondVaccination === "Yes") {
+          const vaccineBrand2 = document.getElementById("vaccine_brand_2").value;
+          const vaccinationDate2 = document.getElementById("vaccine_date_2").value;
+          const vaccinationSite2 = document.getElementById("vaccine_site_2").value;
+          message += "Vaccine Brand (Dose 2): " + vaccineBrand2 + "\n" +
+                     "Date of Vaccination (Dose 2): " + vaccinationDate2 + "\n" +
+                     "Vaccination (Dose 2) Site: " + vaccinationSite2 + "\n";
+        }
+
+      
+        alert(message);
+      })
+
+
+    </script>
+  </body>
+</html>
